@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://c87us0qrdld4q"]
+
+[ext_resource type="Script" uid="uid://dlds1m8l4g7jc" path="res://Soldier/soldier.gd" id="1_28q6g"]
+[ext_resource type="Texture2D" uid="uid://d32j3oedweegw" path="res://Soldier/soldier.png" id="1_owpar"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_owpar"]
+radius = 200.0025
+
+[node name="Soldier" type="Area2D" unique_id=275245535 groups=["Soldier"]]
+collision_mask = 8
+script = ExtResource("1_28q6g")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=419553369]
+texture = ExtResource("1_owpar")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1896391704]
+polygon = PackedVector2Array(-8, -16, 8, -16, 16, -1, 16, 1, 8, 16, -8, 16, -16, 1, -16, -1)
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=1220659691]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hurtbox" unique_id=1067848000]
+polygon = PackedVector2Array(-8, -16, 8, -16, 16, -1, 16, 1, 8, 16, -8, 16, -16, 1, -16, -1)
+
+[node name="DetectionArea" type="Area2D" parent="." unique_id=579710578]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=374773042]
+shape = SubResource("CircleShape2D_owpar")
+
+[node name="AttackReload" type="Timer" parent="." unique_id=1897003378]
+autostart = true
+
+[connection signal="timeout" from="AttackReload" to="." method="_on_attack_reload_timeout"]

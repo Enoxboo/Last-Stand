@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="MonsterData" format=3 uid="uid://f47usr5iwmlb"]
+
+[ext_resource type="Script" uid="uid://bohx761hsgjig" path="res://Monsters/monster_data.gd" id="1_vqe4n"]
+[ext_resource type="Texture2D" uid="uid://7v78eqg4feos" path="res://Monsters/Sprites/rusher.png" id="2_vtydi"]
+
+[resource]
+script = ExtResource("1_vqe4n")
+hp_max = 1
+sprite = ExtResource("2_vtydi")
+metadata/_custom_type_script = "uid://bohx761hsgjig"

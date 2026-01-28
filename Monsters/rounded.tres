@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="MonsterData" format=3 uid="uid://d6mpo3abrayd"]
+
+[ext_resource type="Script" uid="uid://bohx761hsgjig" path="res://Monsters/monster_data.gd" id="1_8oa1s"]
+[ext_resource type="Texture2D" uid="uid://jfdr6h0xbshl" path="res://Monsters/Sprites/rounded.png" id="2_3j4hi"]
+
+[resource]
+script = ExtResource("1_8oa1s")
+speed = 100.0
+sprite = ExtResource("2_3j4hi")
+metadata/_custom_type_script = "uid://bohx761hsgjig"

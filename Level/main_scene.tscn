@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dhaqv27gocslu"]
+
+[ext_resource type="PackedScene" uid="uid://c87us0qrdld4q" path="res://Soldier/soldier.tscn" id="1_0t7q3"]
+[ext_resource type="Script" uid="uid://50e38uvw1yfu" path="res://Level/main_scene.gd" id="1_smnat"]
+
+[node name="MainScene" type="Node2D" unique_id=1150491153 node_paths=PackedStringArray("soldier")]
+script = ExtResource("1_smnat")
+soldier = NodePath("Soldier")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1735557374]
+
+[node name="Soldier" parent="." unique_id=1303057319 instance=ExtResource("1_0t7q3")]
+
+[node name="SpawnTimer" type="Timer" parent="." unique_id=1755366700]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

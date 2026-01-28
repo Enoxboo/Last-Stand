@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bs5im87ttvyd4"]
+
+[ext_resource type="Script" uid="uid://la68555kerl1" path="res://Monsters/monster.gd" id="1_4exnk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ms3m7"]
+radius = 8.062258
+
+[node name="Monster" type="CharacterBody2D" unique_id=437696065]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("1_4exnk")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2025803383]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=420676616]
+shape = SubResource("CircleShape2D_ms3m7")
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=1854489983]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=801051508]
+shape = SubResource("CircleShape2D_ms3m7")

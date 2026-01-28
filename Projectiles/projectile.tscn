@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bl67w6kqa0ywr"]
+
+[ext_resource type="Script" uid="uid://3lem2yvif6nr" path="res://Projectiles/projectile.gd" id="1_ggq0q"]
+[ext_resource type="Texture2D" uid="uid://dw2vg6ssynoqr" path="res://Projectiles/projectile.png" id="1_kyvh0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ggq0q"]
+size = Vector2(5, 2)
+
+[node name="Projectile" type="Area2D" unique_id=1976521446]
+collision_layer = 4
+collision_mask = 16
+script = ExtResource("1_ggq0q")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=803285860]
+texture = ExtResource("1_kyvh0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2071239549]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_ggq0q")
+
+[node name="FadeTimer" type="Timer" parent="." unique_id=746132131]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="timeout" from="FadeTimer" to="." method="_on_fade_timer_timeout"]
