@@ -18,7 +18,7 @@ polygon = PackedVector2Array(-8, -16, 8, -16, 16, -1, 16, 1, 8, 16, -8, 16, -16,
 
 [node name="Hurtbox" type="Area2D" parent="." unique_id=1220659691]
 collision_layer = 2
-collision_mask = 0
+collision_mask = 32
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hurtbox" unique_id=1067848000]
 polygon = PackedVector2Array(-8, -16, 8, -16, 16, -1, 16, 1, 8, 16, -8, 16, -16, 1, -16, -1)

@@ -21,3 +21,12 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=801051508]
 shape = SubResource("CircleShape2D_ms3m7")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=179899477]
+collision_layer = 32
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1407634156]
+shape = SubResource("CircleShape2D_ms3m7")
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
