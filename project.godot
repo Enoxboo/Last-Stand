@@ -25,7 +25,8 @@ folder_colors={
 "res://Level/": "green",
 "res://Monsters/": "red",
 "res://Projectiles/": "yellow",
-"res://Soldier/": "purple"
+"res://Soldier/": "purple",
+"res://UI/": "pink"
 }
 
 [global_group]
