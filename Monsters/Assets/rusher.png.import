@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfmjipuji2ake"
-path="res://.godot/imported/cooldown.png-9976bd6bc2fde61db97ca9459cffd592.ctex"
+uid="uid://7v78eqg4feos"
+path="res://.godot/imported/rusher.png-7db4e4287670096e3804d36548091b41.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/cooldown.png"
-dest_files=["res://.godot/imported/cooldown.png-9976bd6bc2fde61db97ca9459cffd592.ctex"]
+source_file="res://Monsters/Assets/rusher.png"
+dest_files=["res://.godot/imported/rusher.png-7db4e4287670096e3804d36548091b41.ctex"]
 
 [params]
 

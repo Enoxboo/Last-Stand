@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://dhaqv27gocslu"]
 
 [ext_resource type="PackedScene" uid="uid://c87us0qrdld4q" path="res://Soldier/soldier.tscn" id="1_0t7q3"]
-[ext_resource type="Script" uid="uid://50e38uvw1yfu" path="res://Level/main_scene.gd" id="1_smnat"]
+[ext_resource type="Script" uid="uid://50e38uvw1yfu" path="res://Screens/main_scene.gd" id="1_smnat"]
 [ext_resource type="PackedScene" uid="uid://de35pa8bnxb8p" path="res://UI/ui.tscn" id="3_e07l6"]
-[ext_resource type="Texture2D" uid="uid://jfdr6h0xbshl" path="res://Monsters/Sprites/rounded.png" id="4_kf04b"]
-[ext_resource type="Texture2D" uid="uid://7v78eqg4feos" path="res://Monsters/Sprites/rusher.png" id="5_vjow6"]
-[ext_resource type="Texture2D" uid="uid://ctcnrd016swa6" path="res://Monsters/Sprites/tank.png" id="6_vjow6"]
+[ext_resource type="Texture2D" uid="uid://jfdr6h0xbshl" path="res://Monsters/Assets/rounded.png" id="4_kf04b"]
+[ext_resource type="Texture2D" uid="uid://7v78eqg4feos" path="res://Monsters/Assets/rusher.png" id="5_vjow6"]
+[ext_resource type="Texture2D" uid="uid://ctcnrd016swa6" path="res://Monsters/Assets/tank.png" id="6_vjow6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vbplb"]
 radius = 200.0

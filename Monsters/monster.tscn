@@ -29,4 +29,8 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1407634156]
 shape = SubResource("CircleShape2D_ms3m7")
 
+[node name="RetreatTimer" type="Timer" parent="." unique_id=1578759019]
+one_shot = true
+
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="timeout" from="RetreatTimer" to="." method="_on_retreat_timer_timeout"]

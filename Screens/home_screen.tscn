@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://movd8a4v42fq"]
 
-[ext_resource type="Script" uid="uid://c5hcpgiiev2k6" path="res://UI/home_screen.gd" id="1_4j8l2"]
+[ext_resource type="Script" uid="uid://c5hcpgiiev2k6" path="res://Screens/home_screen.gd" id="1_4j8l2"]
 
 [node name="HomeScreen" type="Control" unique_id=1836203090]
 layout_mode = 3

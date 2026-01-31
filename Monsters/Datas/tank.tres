@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="MonsterData" format=3 uid="uid://6ve0nx0tm8b4"]
 
-[ext_resource type="Script" uid="uid://bohx761hsgjig" path="res://Monsters/monster_data.gd" id="1_lilg2"]
-[ext_resource type="Texture2D" uid="uid://ctcnrd016swa6" path="res://Monsters/Sprites/tank.png" id="2_3ywj1"]
+[ext_resource type="Script" uid="uid://bohx761hsgjig" path="res://Monsters/Datas/monster_data.gd" id="1_lilg2"]
+[ext_resource type="Texture2D" uid="uid://ctcnrd016swa6" path="res://Monsters/Assets/tank.png" id="2_3ywj1"]
 
 [resource]
 script = ExtResource("1_lilg2")

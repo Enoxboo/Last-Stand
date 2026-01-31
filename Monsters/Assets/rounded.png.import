@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7v78eqg4feos"
-path="res://.godot/imported/rusher.png-d2c27fc534ebbf9b1c638174bd7e31a8.ctex"
+uid="uid://jfdr6h0xbshl"
+path="res://.godot/imported/rounded.png-8f5e0f4cc09389f93f849f2672fe2e19.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Monsters/Sprites/rusher.png"
-dest_files=["res://.godot/imported/rusher.png-d2c27fc534ebbf9b1c638174bd7e31a8.ctex"]
+source_file="res://Monsters/Assets/rounded.png"
+dest_files=["res://.godot/imported/rounded.png-8f5e0f4cc09389f93f849f2672fe2e19.ctex"]
 
 [params]
 

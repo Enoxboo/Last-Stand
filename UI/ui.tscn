@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://de35pa8bnxb8p"]
 
 [ext_resource type="Script" uid="uid://dhcc8iewmw8sm" path="res://UI/ui.gd" id="1_2fwl4"]
-[ext_resource type="Texture2D" uid="uid://dfmjipuji2ake" path="res://UI/cooldown.png" id="2_dajm1"]
+[ext_resource type="Texture2D" uid="uid://dfmjipuji2ake" path="res://UI/Assets/cooldown.png" id="2_dajm1"]
 
 [node name="UI" type="CanvasLayer" unique_id=611071202]
 script = ExtResource("1_2fwl4")

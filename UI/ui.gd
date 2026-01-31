@@ -28,7 +28,7 @@ func _ready() -> void:
 		spawn_timer.timeout.connect(_on_cooldown_finished)
 
 
-func _process(delta):
+func _process(_delta):
 	if is_on_cooldown and spawn_timer:
 		var time_left = spawn_timer.time_left
 		var total_time = spawn_timer.wait_time

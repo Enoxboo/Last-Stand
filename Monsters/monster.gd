@@ -2,6 +2,7 @@ extends CharacterBody2D
 class_name Monster
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var retreat_timer: Timer = $RetreatTimer
 
 var data: MonsterData
 var soldier: Soldier
@@ -35,16 +36,18 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 	area.get_parent().take_damage(data.damage)
 	retreat_on_hit()
 
+
 func retreat_on_hit() -> void:
 	is_retreating = true
 	var retreat_time: float = 0.5
-	var initial_speed: float = data.speed
 	var retreat_speed: float = 10
 	speed = retreat_speed
 	direction = - direction
 	
-	await get_tree().create_timer(retreat_time).timeout
-	
-	data.speed = initial_speed
+	retreat_timer.start(retreat_time)
+
+
+func _on_retreat_timer_timeout() -> void:
+	speed = data.speed
 	direction = - direction
 	is_retreating = false

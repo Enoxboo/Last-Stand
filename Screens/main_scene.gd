@@ -6,6 +6,7 @@ signal spawn_on_cooldown
 @onready var spawn_timer: Timer = $SpawnTimer
 @onready var ui: CanvasLayer = $UI
 
+const WIN_SCREEN = preload("uid://dkuuc5rdica8f")
 const MONSTER = preload("uid://bs5im87ttvyd4")
 const MONSTER_DATA: Dictionary = {
 	"ROUNDED" : preload("uid://d6mpo3abrayd"),
@@ -27,6 +28,7 @@ var selected_monster: MonsterData:
 func _ready():
 	ui.spawn_timer = spawn_timer
 	ui.update_monster_icon(monster_types[current_index])
+	soldier.is_dead.connect(_on_soldier_death)
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("spawn_monster"):
@@ -68,3 +70,6 @@ func _on_spawn_limit_mouse_entered() -> void:
 
 func _on_spawn_limit_mouse_exited() -> void:
 	is_spawn_allowed = true
+
+func _on_soldier_death() -> void:
+	get_tree().call_deferred("change_scene_to_packed", WIN_SCREEN)

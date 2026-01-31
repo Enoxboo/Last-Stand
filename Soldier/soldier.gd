@@ -2,6 +2,8 @@ extends Area2D
 
 class_name Soldier
 
+signal is_dead
+
 @onready var detection_area: Area2D = $DetectionArea
 var projectile_speed: float = 1000
 var projectile_damage: int = 1
@@ -47,4 +49,4 @@ func take_damage(damage) -> void:
 	current_hp -= damage
 	
 	if current_hp <= 0:
-		print("game over")
+		is_dead.emit()

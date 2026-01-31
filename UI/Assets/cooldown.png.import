@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jfdr6h0xbshl"
-path="res://.godot/imported/rounded.png-4ea31a83f11535ccac1d01f8a6c4087a.ctex"
+uid="uid://dfmjipuji2ake"
+path="res://.godot/imported/cooldown.png-ac1d24ac76b9294c56154a236dd90802.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Monsters/Sprites/rounded.png"
-dest_files=["res://.godot/imported/rounded.png-4ea31a83f11535ccac1d01f8a6c4087a.ctex"]
+source_file="res://UI/Assets/cooldown.png"
+dest_files=["res://.godot/imported/cooldown.png-ac1d24ac76b9294c56154a236dd90802.ctex"]
 
 [params]
 
