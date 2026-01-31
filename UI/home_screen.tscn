@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://movd8a4v42fq"]
+
+[ext_resource type="Script" uid="uid://c5hcpgiiev2k6" path="res://UI/home_screen.gd" id="1_4j8l2"]
+
+[node name="HomeScreen" type="Control" unique_id=1836203090]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4j8l2")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=846837900]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="VBoxContainer" unique_id=412071460]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "LAST STAND"
+
+[node name="PlayButton" type="Button" parent="VBoxContainer" unique_id=1604131614]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "PLAY"
+
+[node name="ExitButton" type="Button" parent="VBoxContainer" unique_id=872444983]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "EXIT"
+
+[connection signal="button_down" from="VBoxContainer/PlayButton" to="." method="_on_play_button_button_down"]
+[connection signal="button_down" from="VBoxContainer/ExitButton" to="." method="_on_exit_button_button_down"]

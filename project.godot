@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Last-Stand"
-run/main_scene="uid://dhaqv27gocslu"
+run/main_scene="uid://movd8a4v42fq"
 config/features=PackedStringArray("4.6", "Forward Plus")
 
 [display]
