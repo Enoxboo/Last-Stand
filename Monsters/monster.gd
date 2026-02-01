@@ -39,8 +39,8 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 
 func retreat_on_hit() -> void:
 	is_retreating = true
-	var retreat_time: float = 0.5
-	var retreat_speed: float = 10
+	var retreat_time: float = 0.75
+	var retreat_speed: float = 50
 	speed = retreat_speed
 	direction = - direction
 	
