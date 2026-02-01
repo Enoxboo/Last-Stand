@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://daunlr1a1xblm"]
+
+[ext_resource type="Script" uid="uid://cyw574e4wqxsc" path="res://Monsters/spawner.gd" id="1_h5iqt"]
+[ext_resource type="Texture2D" uid="uid://ddkpv72fenj4r" path="res://Monsters/Assets/spawner.png" id="1_rqqos"]
+
+[node name="Spawner" type="Node2D" unique_id=896300363]
+script = ExtResource("1_h5iqt")
+
+[node name="Timer" type="Timer" parent="." unique_id=803858750]
+one_shot = true
+autostart = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2108416463]
+texture = ExtResource("1_rqqos")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

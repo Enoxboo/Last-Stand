@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://dhaqv27gocslu"]
+
+[ext_resource type="PackedScene" uid="uid://c87us0qrdld4q" path="res://Soldier/soldier.tscn" id="1_0t7q3"]
+[ext_resource type="Script" uid="uid://50e38uvw1yfu" path="res://Screens/main_scene.gd" id="1_smnat"]
+[ext_resource type="PackedScene" uid="uid://de35pa8bnxb8p" path="res://UI/ui.tscn" id="3_e07l6"]
+[ext_resource type="Texture2D" uid="uid://jfdr6h0xbshl" path="res://Monsters/Assets/rounded.png" id="4_kf04b"]
+[ext_resource type="Texture2D" uid="uid://7v78eqg4feos" path="res://Monsters/Assets/rusher.png" id="5_vjow6"]
+[ext_resource type="Texture2D" uid="uid://ctcnrd016swa6" path="res://Monsters/Assets/tank.png" id="6_vjow6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vbplb"]
+radius = 200.0
+
+[node name="MainScene" type="Node2D" unique_id=1150491153 node_paths=PackedStringArray("soldier")]
+script = ExtResource("1_smnat")
+soldier = NodePath("Soldier")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1735557374]
+
+[node name="Soldier" parent="." unique_id=1303057319 instance=ExtResource("1_0t7q3")]
+
+[node name="SpawnTimer" type="Timer" parent="." unique_id=1755366700]
+wait_time = 3.0
+one_shot = true
+
+[node name="SpawnLimit" type="Area2D" parent="." unique_id=1777400511]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpawnLimit" unique_id=588933673]
+shape = SubResource("CircleShape2D_vbplb")
+
+[node name="UI" parent="." unique_id=611071202 node_paths=PackedStringArray("scene", "spawn_timer") instance=ExtResource("3_e07l6")]
+scene = NodePath("..")
+spawn_timer = NodePath("../SpawnTimer")
+monster_textures = Dictionary[String, Texture2D]({
+"ROUNDED": ExtResource("4_kf04b"),
+"RUSHER": ExtResource("5_vjow6"),
+"TANK": ExtResource("6_vjow6")
+})
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
+[connection signal="mouse_entered" from="SpawnLimit" to="." method="_on_spawn_limit_mouse_entered"]
+[connection signal="mouse_exited" from="SpawnLimit" to="." method="_on_spawn_limit_mouse_exited"]

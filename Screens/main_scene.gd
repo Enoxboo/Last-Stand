@@ -7,12 +7,23 @@ signal spawn_on_cooldown
 @onready var ui: CanvasLayer = $UI
 
 const WIN_SCREEN = preload("uid://dkuuc5rdica8f")
-const MONSTER = preload("uid://bs5im87ttvyd4")
+
 const MONSTER_DATA: Dictionary = {
-	"ROUNDED" : preload("uid://d6mpo3abrayd"),
-	"RUSHER" : preload("uid://f47usr5iwmlb"),
-	"TANK" : preload("uid://6ve0nx0tm8b4")
+	"ROUNDED" : {
+		"resource": preload("uid://d6mpo3abrayd"),
+		"count": 2
+	},
+	"RUSHER" : {
+		"resource": preload("uid://f47usr5iwmlb"),
+		"count": 3
+	},
+	"TANK" : {
+		"resource": preload("uid://6ve0nx0tm8b4"),
+		"count": 1
+	}
 }
+
+const SPAWNER = preload("uid://daunlr1a1xblm")
 
 @export var soldier: Soldier
 
@@ -23,7 +34,11 @@ var is_spawn_allowed = false
 
 var selected_monster: MonsterData:
 	get:
-		return MONSTER_DATA[monster_types[current_index]]
+		return MONSTER_DATA[monster_types[current_index]]["resource"]
+
+var monsters_number: int:
+	get:
+		return MONSTER_DATA[monster_types[current_index]]["count"]
 
 func _ready():
 	ui.spawn_timer = spawn_timer
@@ -37,7 +52,7 @@ func _input(event: InputEvent) -> void:
 		elif not is_spawn_allowed:
 			spawned_too_close.emit()
 		else:
-			spawn_monster()
+			spawn_monsters()
 	
 	if event.is_action_pressed("move_right"):
 		current_index = (current_index + 1) % monster_types.size()
@@ -49,18 +64,23 @@ func _input(event: InputEvent) -> void:
 		print("Monstre sélectionné: ", monster_types[current_index])
 		ui.update_monster_icon(monster_types[current_index])
 
-func spawn_monster():
+
+func spawn_monsters():
 	spawn_timer.start()
 	can_spawn = false
 	ui.start_cooldown()
+	var spawn_range: float = 25.0
 	
-	var monster = MONSTER.instantiate()
-	
-	monster.soldier = soldier
-	monster.global_position = get_global_mouse_position()
-	monster.data = selected_monster
-	
-	add_child(monster)
+	for x in monsters_number:
+		var offset: Vector2 = Vector2(randf_range(-spawn_range, spawn_range), randf_range(-spawn_range, spawn_range))
+		var spawner = SPAWNER.instantiate()
+		
+		spawner.soldier = soldier
+		spawner.global_position = get_global_mouse_position() + offset
+		spawner.data = selected_monster
+		
+		add_child(spawner)
+
 
 func _on_spawn_timer_timeout() -> void:
 	can_spawn = true
